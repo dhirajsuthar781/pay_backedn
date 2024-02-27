@@ -58,7 +58,7 @@ const Quickloan = () => {
                 <CashAdvance />
 
                 <div className="relative  flex justify-end  bg-white ">
-                    <img src="./img/logobg1.png" className="bg-cover bg-no-repeat " />
+                    <img src="./static/img/logobg1.png" className="bg-cover bg-no-repeat " />
                 </div>
             </div>
         </>

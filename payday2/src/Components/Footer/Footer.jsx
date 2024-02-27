@@ -9,7 +9,7 @@ function Footer() {
 
             <footer class="bg-white md:px-12 lg:px-24 relative z-90 dark:bg-gray-900 md:justify-center gap-10 lg:gap-0  items-center  lg:items-start lg:justify-between  flex flex-col lg:flex-row ">
                 <div className=" pt-8 w-[180px]">
-                    <img src="./img/llogo.png" alt="logo" title="PayDay" className=" w-[180px]" />
+                    <img src="./static/img/llogo.png" alt="logo" title="PayDay" className=" w-[180px]" />
                 </div>
 
                 <div class="grid grid-cols-2 gap-[50px]   lg:gap-32 px-4 py-6 lg:py-8 md:grid-cols-4">

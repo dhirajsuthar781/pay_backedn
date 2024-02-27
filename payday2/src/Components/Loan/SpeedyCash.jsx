@@ -9,7 +9,7 @@ const SpeedyCash = () => {
 
         <>
 
-            <img src="/img/person.jpg" className=" sticky top-0 -z-10 bg-fixed  w-fit bg-cover bg-no-repeat " />
+            <img src="/static/img/person.jpg" className=" sticky top-0 -z-10 bg-fixed  w-fit bg-cover bg-no-repeat " />
 
             <div className=" md:h-24 lg:h-32  bg-gradient-to-b from-[#f000] via-[#ffffff9b] to-[#fff] ">
             </div>

@@ -63,7 +63,7 @@ function Home(props) {
                 </div>
 
                 <div className=" overflow-hidden ">
-                    <img src="./img/back2.png" alt="back2" className=" hover:scale-105 transition-all duration-500 ease-in-out  md:w-[450px] w-[300px] lg:w-[550px]" />
+                    <img src="./static/img/back2.png" alt="back2" className=" hover:scale-105 transition-all duration-500 ease-in-out  md:w-[450px] w-[300px] lg:w-[550px]" />
                 </div>
             </div>
 

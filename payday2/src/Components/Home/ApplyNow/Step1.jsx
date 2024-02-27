@@ -53,8 +53,8 @@ function Step1() {
 
                         </div>
                         <div className=" md:w-1/2 p-10 flex justify-center items-center gap-5 flex-col">
-                            <img src="./img/back4.jpg" alt="images" className=" md:w-[80%]" />
-                            <img src="./img/logobg1.png" alt="asdf" className=" " />
+                            <img src="./static/img/back4.jpg" alt="images" className=" md:w-[80%]" />
+                            <img src="./static/img/logobg1.png" alt="asdf" className=" " />
                         </div>
                     </div>
                     <div className=" w-full justify-center items-center flex  flex-col gap-8">

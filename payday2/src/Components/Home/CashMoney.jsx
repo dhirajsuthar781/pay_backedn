@@ -18,7 +18,7 @@ const CashMoney = (props) => {
                             </p>
                         </div>
                         <div className="flex justify-center items-center">
-                            <img src="/img/Cm1.png" className=" w-[60%] md:w-[450px]" />
+                            <img src="static/img/Cm1.png" className=" w-[60%] md:w-[450px]" />
                         </div>
                     </div>
                     <div className="flex flex-col-reverse gap-8 md:flex-row justify-between items-center gap-x-5 ">
@@ -28,7 +28,7 @@ const CashMoney = (props) => {
                             </p>
                         </div>
                         <div className="flex justify-center items-center">
-                            <img src="/img/Cm2.png" className="w-[70%] md:w-[500px]   " />
+                            <img src="/static/img/Cm2.png" className="w-[70%] md:w-[500px]   " />
                         </div>
                     </div>
                     <div className="flex flex-col-reverse gap-8 md:flex-row justify-between items-center gap-x-5 ">
@@ -38,7 +38,7 @@ const CashMoney = (props) => {
                             </p>
                         </div>
                         <div className="flex justify-center items-center">
-                            <img src="/img/Cm3.png" className="w-[60%] md:w-[550px] " />
+                            <img src="/static/img/Cm3.png" className="w-[60%] md:w-[550px] " />
                         </div>
                     </div>
                 </div>

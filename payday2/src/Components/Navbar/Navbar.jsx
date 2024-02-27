@@ -7,10 +7,21 @@ import { Input } from '@mantine/core';
 
 
 const options = [
-    { value: 'Ontario', label: 'Ontario' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' },
+    {value:"Nova Scotia", label: 'Nova Scotia' },
+    {value:"Nunavut", label: "Nunavut"},
+    {value:"Ontario", label: "Ontario"},
+    {value:"Prince Edward Island", label: "Prince Edward Island"},
+    {value:"Quebec", label: "Quebec"},
+    {value:"Saskatchewan", label: "Saskatchewan"},
 ];
+
+
+
+                        // <option value="Nunavut">Nunavut</option>
+                        // <option value="Ontario">Ontario</option>
+                        // <option value="Prince Edward Island">Prince Edward Island</option>
+                        // <option value="Quebec">Quebec</option>
+                        // <option value="Saskatchewan">Saskatchewan</option>
 
 function Navbar() {
 
@@ -53,7 +64,7 @@ function Navbar() {
                     <p>FAQs</p>
                     <div className=" text-primary  flex flex-row justify-center items-center gap-5 font-Montserrat text-[16px]">
                         <p>Login</p>
-                        <img src="./img/userlogin.png" alt="asdf" className=" w-5" />
+                        <img src="./static/img/userlogin.png" alt="asdf" className=" w-5" />
                     </div>
                 </div>
             </div>
@@ -62,7 +73,7 @@ function Navbar() {
             <div className=" lg:flex  hidden justify-between items-center px-24 sticky  z-50 top-0 border-b-[1px] py-3 border-[#b9b9b95d] bg-[#ffffff27] backdrop-blur-md backdrop-filter">
 
                 <NavLink to={'/'}>
-                    <div><img src="./img/llogo.png" className=" h-[80px] w-[125px]" alt="Payday" title="Payday" /></div>
+                    <div><img src="./static/img/llogo.png" className=" h-[80px] w-[125px]" alt="Payday" title="Payday" /></div>
                 </NavLink>
 
                 <div className=" font-Montserrat md:text-[20px] flex justify-center items-center gap-16">
@@ -88,7 +99,7 @@ function Navbar() {
                         </div>
                     </NavLink>
                     <div className=" w-[200px] text-[16px] text-seconday flex flex-row items-center justify-center gap-2">
-                        <img src="./img/flag.png" alt="canada" title="Canada" className="w-8 h-5" />
+                        <img src="./static/img/flag.png" alt="canada" title="Canada" className="w-8 h-5" />
 
                         <Select
                             styles={{
@@ -129,7 +140,7 @@ function Navbar() {
                 <div className="lg:hidden  flex items-center justify-between  px-7 md:px-16  py-3  ">
 
                     <NavLink to={'/'}>
-                        <div className=" w-[100px]"><img src="./img/logo.png" className=" h-[55px] w-[180px]" alt="Payday" title="Payday" /></div>
+                        <div className=" w-[100px]"><img src="./static/img/logo.png" className=" h-[55px] w-[180px]" alt="Payday" title="Payday" /></div>
                     </NavLink>
 
 

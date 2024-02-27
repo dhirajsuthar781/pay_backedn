@@ -16,9 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.views.generic import TemplateView
+from django.conf.urls.static import static
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/", include("api.urls"))
+    path("api/", include("api.urls")),
+    path('', TemplateView.as_view(template_name='index.html')),
+    path('Login/', TemplateView.as_view(template_name='index.html')),
+    path('Signup/', TemplateView.as_view(template_name='index.html')),
+    path('ApplyNow/', TemplateView.as_view(template_name='index.html')),
+    path('step2/', TemplateView.as_view(template_name='index.html')),
+    path('about/', TemplateView.as_view(template_name='index.html')),
+    path('contact/', TemplateView.as_view(template_name='index.html')),
+    path('contact/', TemplateView.as_view(template_name='index.html')),
 ]

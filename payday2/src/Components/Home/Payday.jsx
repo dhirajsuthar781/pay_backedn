@@ -33,7 +33,7 @@ const Payday = (props) => {
 
 
             <div>
-                <div className="flex  relative  justify-start object-cover   bg-cover bg-center bg-[url(./../public/img/team.jpg)] items-center py-16 px-5 md:px-12 ">
+                <div className="flex  relative  justify-start object-cover   bg-cover bg-center bg-[url(./../public/static/img/team.jpg)] items-center py-16 px-5 md:px-12 ">
 
                     <div className="bg-white flex flex-col  relative   shadow-xl rounded-lg  p-6 w-full md:w-[800px]  ">
                         <div className="  ">
@@ -67,7 +67,7 @@ const Payday = (props) => {
                                     <p>Select State:</p>
 
                                     <div className=" w-[200px] text-[16px] text-seconday flex flex-row items-center justify-center gap-2">
-                                        <img src="./img/flag.png" alt="canada" title="Canada" className="w-8 h-5" />
+                                        <img src="./static/img/flag.png" alt="canada" title="Canada" className="w-8 h-5" />
 
                                         <Select
                                             styles={{
@@ -92,17 +92,17 @@ const Payday = (props) => {
                                 <div className="flex flex-row  gap-x-5    pt-3 ">
                                     <div>
                                         <div className="flex flex-row justify-start items-center">
-                                            <img src="/img/Star.png" className="w-7" />
+                                            <img src="/static/img/Star.png" className="w-7" />
                                             <h1>Trustpilot</h1>
                                         </div>
-                                        <img src="/img/Stars.png" className=" w-20 md:w-28 lg:w-30" />
+                                        <img src="/static/img/Stars.png" className=" w-20 md:w-28 lg:w-30" />
 
                                     </div>
                                     <div className="w-20 md:w-28 lg:w-30 pt-3">
-                                        <img src="/img/download.png" className="" />
+                                        <img src="/static/img/download.png" className="" />
                                     </div>
                                     <div className="w-20 md:w-28 lg:w-22">
-                                        <img src="/img/download2.png" className="" />
+                                        <img src="/static/img/download2.png" className="" />
                                     </div>
                                 </div>
                             </div>
@@ -117,10 +117,10 @@ const Payday = (props) => {
                                 <button onClick={() => {
                                     navi("/Login")
                                 }} className="flex font-Montserrat md:h-[60px]  md:py-0  py-2   md:w-[210px] flex-row text-primary justify-center items-center border-[2px] border-primary   text-[22px]  rounded-lg  gap-x-5">
-                                    <img src="/img/userlogin.png" className="w-7 md:w-7 lg:w-10" />
+                                    <img src="/static/img/userlogin.png" className="w-7 md:w-7 lg:w-10" />
                                     Login</button>
                             </div>
-                            {/* <img src="/img/team.jpg" className="w-screen" /> */}
+                            {/* <img src="/static/img/team.jpg" className="w-screen" /> */}
                         </div>
                     </div>
                 </div>

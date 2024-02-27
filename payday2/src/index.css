@@ -5,7 +5,7 @@
 
 
  .aboutMain {
-     background-image: url('./../public/img/back3.jpg');
+     background-image: url('./../public/static/img/back3.jpg');
      background-size: cover;
 
  }
