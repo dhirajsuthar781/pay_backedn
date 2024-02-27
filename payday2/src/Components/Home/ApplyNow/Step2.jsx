@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Input, Select, Checkbox } from '@mantine/core';
+import axios from "axios";
 
 function Step2() {
     const [title, setTitle] = useState('');
@@ -25,91 +26,107 @@ function Step2() {
     const Amount = useRef();
 
 
-    // function handlesubmit() {
-    //     let ob = {
-    //         Address: Address.current.value,
-    //         Fname: Fname.current.value,
-    //         Appartment: Appartment.current.value,
-    //         PostalCode: PostalCode.current.value,
-    //         Lname: Lname.current.value,
-    //         City: City.current.value,
-    //         Email: Email.current.value,
-    //         YearsAtAddress: YearsAtAddress.current.value,
-    //         MonthsAtAddress: MonthsAtAddress.current.value,
-    //         CellPhone: CellPhone.current.value,
-    //         Alternate: Alternate.current.value,
-    //         Sin: Sin.current.value,
-    //         title,
-    //         month,
-    //         day,
-    //         year,
-    //         martialStatus,
-    //         Amount: Amount.current.value
+    
+
+
+    // async function handlesubmit(e) {
+
+    //     if (Address.current.value!= "" && Fname.current.value!= "" && Appartment.current.value!= "" && PostalCode.current.value!= "" && Lname.current.value!= "" && City.current.value!= "" && Email.current.value!= "" && YearsAtAddress.current.value!= "" && MonthsAtAddress.current.value!= "" && CellPhone.current.value!= "" && Sin.current.value!= "" && Amount.current.value!= "" && month!= "" && day!= "" && year!= "") {
+
+
+    //         e.preventDefault();
+
+    //         let ob = {
+    //             Address: Address.current.value,
+    //             Fname: Fname.current.value,
+    //             Appartment: Appartment.current.value,
+    //             PostalCode: PostalCode.current.value,
+    //             Lname: Lname.current.value,
+    //             City: City.current.value,
+    //             Email: Email.current.value,
+    //             YearsAtAddress: YearsAtAddress.current.value,
+    //             MonthsAtAddress: MonthsAtAddress.current.value,
+    //             CellPhone: CellPhone.current.value,
+    //             Alternate: Alternate.current.value,
+    //             Sin: Sin.current.value,
+    //             title,
+    //             month,
+    //             day,
+    //             year,
+    //             martialStatus,
+    //             Amount: Amount.current.value
+    //         }
+    //         const response = await fetch("/loanAmount", {
+    //             method: "POST",
+
+    //             body: JSON.stringify(ob),
+
+
+    //             headers: {
+    //                 "Content-Type": "application/json",
+    //             },
+
+    //         });
+
+    //         const result = await response.json();
+
+    //         if (!response.ok) {
+    //             console.log(result.error);
+
+    //         }
+
+    //         if (response.ok) {
+    //             console.log(result);
+
+    //         }
     //     }
-    //     console.log(ob);
+    //     else {
+    //         alert("Please Fill All the Details")
+    //     }
 
 
     // }
 
-
-    async function handlesubmit(e) {
-
-        if (Address.current.value!= "" && Fname.current.value!= "" && Appartment.current.value!= "" && PostalCode.current.value!= "" && Lname.current.value!= "" && City.current.value!= "" && Email.current.value!= "" && YearsAtAddress.current.value!= "" && MonthsAtAddress.current.value!= "" && CellPhone.current.value!= "" && Sin.current.value!= "" && Amount.current.value!= "" && month!= "" && day!= "" && year!= "") {
-
-
-            e.preventDefault();
-
-            let ob = {
-                Address: Address.current.value,
-                Fname: Fname.current.value,
-                Appartment: Appartment.current.value,
-                PostalCode: PostalCode.current.value,
-                Lname: Lname.current.value,
-                City: City.current.value,
-                Email: Email.current.value,
-                YearsAtAddress: YearsAtAddress.current.value,
-                MonthsAtAddress: MonthsAtAddress.current.value,
-                CellPhone: CellPhone.current.value,
-                Alternate: Alternate.current.value,
-                Sin: Sin.current.value,
-                title,
-                month,
-                day,
-                year,
-                martialStatus,
-                Amount: Amount.current.value
-            }
-            const response = await fetch("/loanAmount", {
-                method: "POST",
-
-                body: JSON.stringify(ob),
-
-
-                headers: {
-                    "Content-Type": "application/json",
-                },
-
-            });
-
-            const result = await response.json();
-
-            if (!response.ok) {
-                console.log(result.error);
-
-            }
-
-            if (response.ok) {
-                console.log(result);
-
-            }
-        }
-        else {
-            alert("Please Fill All the Details")
-        }
-
-
-    }
-
+    const adddata = async (e) => {
+        e.preventDefault();
+    
+        const formData = new FormData();
+        formData.append("fname", Fname.current.value);
+        formData.append("lname", Lname.current.value);
+        formData.append("appartment", Appartment.current.value);
+        formData.append("postalCode", PostalCode.current.value);
+        formData.append("city", City.current.value);
+        formData.append("email", Email.current.value);
+        formData.append("yearsAtAddress", YearsAtAddress.current.value);
+        formData.append("monthsAtAddress", MonthsAtAddress.current.value);
+        formData.append("cellPhone", CellPhone.current.value);
+        formData.append("alternate", Alternate.current.value);
+        formData.append("sin", Sin.current.value);
+        formData.append("title", title);
+        formData.append("month", month);
+        formData.append("day", day);
+        formData.append("year", year);
+        formData.append("martialStatus", martialStatus);
+        formData.append("amount", Amount.current.value);
+        formData.append("address", Address.current.value);
+        axios({
+          url: process.env.REACT_APP_SERVER + "/api/addinquiry/",
+          method: "POST",
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+          data: formData,
+        })
+          .then((res) => {
+            //setLoading("hidden");
+            alert(res["data"]["msg"]);
+            window.location.reload();
+          })
+          .catch((err) => {
+            //setLoading("hidden");
+            alert(err);
+          });
+      };
 
 
     useEffect(() => {
@@ -514,7 +531,7 @@ function Step2() {
                                             size="32px"
                                             label="Month"
                                             placeholder=""
-                                            data={["jan", 'feb']}
+                                            data={["1", '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']}
 
                                             searchValue={month}
                                             onSearchChange={setMonth}
@@ -752,7 +769,7 @@ function Step2() {
                         </div>
 
                         <div className=" flex justify-end flex-row w-full px-3 md:px-3 lg:px-16 pt-5 pb-5">
-                            <button onClick={handlesubmit} className={!checked ? "hidden" : '' + `  text-[16px] md:text-[18px] font-medium w-[100px] md:w-[120px] text-white  font-Montserrat py-1 md:py-1  rounded-full bg-gradient-to-r  border-[2px] border-transparent transition-all duration-300 from-gradfrom to-gradto hover:from-white  hover:tp-white hover:border-[2px] hover:border-primary  hover:text-primary`}>Next</button>
+                            <button onClick={adddata} className={!checked ? "hidden" : '' + `  text-[16px] md:text-[18px] font-medium w-[100px] md:w-[120px] text-white  font-Montserrat py-1 md:py-1  rounded-full bg-gradient-to-r  border-[2px] border-transparent transition-all duration-300 from-gradfrom to-gradto hover:from-white  hover:tp-white hover:border-[2px] hover:border-primary  hover:text-primary`}>Next</button>
                             <button className={checked ? 'hidden' : "" + ` text-[16px] md:text-[18px] font-medium w-[100px] md:w-[120px] text-white  font-Montserrat py-1 md:py-1  rounded-full bg-gradient-to-r  border-[2px] border-transparent transition-all duration-300 from-[#c7c7c7] to-[#c7c7c7]    `}>Next</button>
 
                         </div>

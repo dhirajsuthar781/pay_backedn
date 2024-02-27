@@ -21,18 +21,17 @@ def signup(request):
 
         if User.objects.filter(username=username):
             messages.error(request, "Username already exist! Please try some other username.")
-            return render(request,'admin_use/createuser.html') 
         
         if User.objects.filter(email=email).exists():
             messages.error(request, "Email Already Registered!!")
-            return render(request,'admin_use/createuser.html') 
         
         
         
        
         
-        myuser = User.objects.create_user(username, email, pass1, phone=phone)
+        myuser = User.objects.create_user(username, email, pass1)
         myuser.first_name = fname
+        myuser.phone = phone
         myuser.last_name = "None"
         # myuser.is_active = False
         myuser.is_active = True
@@ -50,9 +49,9 @@ def signup(request):
 @csrf_exempt
 def signin(request):
       if request.method == 'POST':
-        username = request.POST['username']
-        pass1 = request.POST['pass1']
-        phone = request.POST['phone']
+        username = request.POST.get('username')
+        pass1 = request.POST.get('pass1')
+        phone = request.POST.get('phone')
         
         user = authenticate(username=username, password=pass1, phone=phone)
         
@@ -66,7 +65,7 @@ def signin(request):
 
       return HttpResponse(json.dumps({"msg": " not expected method."}),content_type="application/json",)
 
-
+@csrf_exempt
 def upload_inquiry(request):
     if request.method == "POST":
         loan = LoanAmout()
@@ -91,3 +90,5 @@ def upload_inquiry(request):
         loan.address = request.POST.get('address')
 
         loan.save()
+
+        return HttpResponse(json.dumps({"msg": " not expected method."}),content_type="application/json",)
