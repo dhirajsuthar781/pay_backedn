@@ -1,0 +1,113 @@
+ @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Varela+Round&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+ .aboutMain {
+     background-image: url('./../public/img/back3.jpg');
+     background-size: cover;
+
+ }
+
+ table,
+ th {
+     width: 650px;
+     height: 180px;
+     border: 2px solid #f0f0f0;
+     border-collapse: collapse;
+ }
+
+ table,
+ th:hover {
+     border: 0px solid #f0f0f0;
+
+ }
+
+ input[type="range"] {
+     -webkit-appearance: none;
+     appearance: none;
+     background: transparent;
+     cursor: pointer;
+     width: 100%;
+ }
+
+
+ input[type="range"]::-webkit-slider-runnable-track {
+     background: #00B1A4;
+     height: 0.5rem;
+     border-radius: 5px;
+ }
+
+.show{
+    display: none;
+    transition: all 0.3s;
+    
+ 
+    
+}
+
+.scroll-container::-webkit-scrollbar { 
+    width: 3px; 
+    height: 50px;
+} 
+
+.scroll-container::-webkit-scrollbar-track { 
+    background: #f1f1f1; 
+ 
+} 
+
+.scroll-container::-webkit-scrollbar-thumb { 
+    background: #86868637; 
+  
+ 
+} 
+
+.scroll-container::-webkit-scrollbar-thumb:hover { 
+   
+    background: #55555580; 
+} 
+
+.scroll-container::-webkit-scrollbar-button { 
+    display: none; 
+  
+} 
+
+
+ 
+
+ input[type="range"]::-webkit-slider-thumb {
+     -webkit-appearance: none;
+     /* Override default look */
+     appearance: none;
+     margin-top: -8px;
+     /* Centers thumb on the track */
+     background-color: #ffffff;
+     border: 3px solid #00B1A4;
+     border-radius: 50%;
+     height: 1.5rem;
+     width: 1.5rem;
+
+ }
+
+ @tailwind base;
+ @tailwind components;
+ @tailwind utilities;
+
+
+
+ @media only screen and (max-width: 600px) {
+     /* table,th{
+        width: 250px;
+        height: 120px;
+        border: 2px solid #f0f0f0;
+        border-collapse:collapse ;
+        box-shadow: none;
+    }
+
+
+    table,th:hover{
+        border: 0px solid #f0f0f0;
+      
+    } */
+ }
